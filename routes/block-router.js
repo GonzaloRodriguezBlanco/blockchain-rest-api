@@ -1,14 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var blockController = require('../controllers/block-controller');
 
 /* GET block */
-router.get('/:height(\\d+)', function(req, res, next) {
-  res.send('This will GET block ' + req.params.height);
-});
+router.get('/:height(\\d+)', blockController.read);
 
 /* POST block */
-router.post('/', function(req, res, next) {
-  res.send('This will POST a block');
-});
+router.post('/', blockController.create);
 
 module.exports = router;
