@@ -7,7 +7,7 @@ This project has been developed with Express.
 
 Execute the following command to start the server:
 ```bash
-npm start
+PORT=8000 npm start
 ```
 
 The server will be listening on http://localhost:3000
@@ -16,13 +16,13 @@ The server will be listening on http://localhost:3000
 The operations provided by this project are:
 
 ```
-GET http://localhost:3000/block/:height
+GET http://localhost:8000/block/:height
 ```
 
 where :height is an integer number.
 
 ```
-POST http://localhost:3000/block
+POST http://localhost:8000/block
 
 Content-Type: application/json
 
