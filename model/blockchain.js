@@ -25,7 +25,7 @@ module.exports = class Blockchain {
     // Add new block
     addBlock(newBlock) {
         // DONE (3): Check if a Genesis Block already exists. If not, one is created before adding the block
-        this.checkAndCreateGenesisBlock()
+        return this.checkAndCreateGenesisBlock()
             .then((genesisBlock) => {
                 return this.getBlockHeight()
             })
@@ -40,7 +40,7 @@ module.exports = class Blockchain {
                 newBlock.hash = SHA256(JSON.stringify(newBlock)).toString();
                 // DONE (2): Add a method to store newBlock with LevelDB
                 // Adding block object to chain
-                this.storeBlock(newBlock.height, newBlock);
+                return this.storeBlock(newBlock.height, newBlock);
             })
             .catch((err) => {
                 console.log("Error", err);
