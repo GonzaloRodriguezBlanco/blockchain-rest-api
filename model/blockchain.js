@@ -12,7 +12,7 @@ let Block = require('./block');
 |  Class with a constructor for new blockchain 		|
 |  ================================================*/
 
-module.exports = class Blockchain {
+class Blockchain {
     constructor() {
         // DONE (1): Configure simpleChain.js with LevelDB to persist blockchain dataset using the level Node.js library.
         this.chain = level(chainDB);
@@ -216,4 +216,6 @@ module.exports = class Blockchain {
             .on('closed', () => console.log("Store has closed"));
     }
 }
+
+module.exports = new Blockchain();
 
